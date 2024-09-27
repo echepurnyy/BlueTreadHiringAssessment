@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/BlueTreadHiringAssessment/bin/Debug/net8.0
+/BlueTreadHiringAssessment/obj
+/BlueTreadHiringAssessment/BlueTreadHiringAssessment.csproj
+/BlueTreadHiringAssessment/BlueTreadHiringAssessment.csproj.user
+/BlueTreadHiringAssessment/appsettings.Development.json

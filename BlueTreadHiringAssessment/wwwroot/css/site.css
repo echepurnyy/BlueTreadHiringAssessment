@@ -1,0 +1,57 @@
+html {
+  font-size: 14px;
+  font-family:"Inter", sans-serif;
+  font-style: normal;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.loading {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #182f40;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.load-img{
+    position: fixed;
+    top:33%;
+    left:33%;
+    height:33%;
+}
+.logo-mini{
+    height:100%;
+    padding:7px;
+}
+header {
+    text-align: left;
+    vertical-align: top;
+    background-color: #182f40;
+}
+.submit-btn{
+    color:white;
+    background-color:#186CA8;    
+}

@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "EncoreTix";
+}
+
+<div class="loading">
+    <img class="load-img" src="~/img/EncoreTixLogo.png" />
+</div>
+
+<form method="post" style="padding-top:14px;">
+  <div class="form-group row">
+    <div class="col-sm-10">
+        <input type="text" class="form-control" name="SearchQuery" id="SearchQuery" placeholder="Search attractions..."/>
+    </div>
+    <div class="col-sm-2">
+        <input type="submit" class="form-control submit-btn" value="Submit" />
+    </div>
+</div>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function () { 
+        setTimeout(function () {
+            $(".loading").hide();
+        }, 1000);
+    });
+    $("#SearchQuery").on("focus", function () {
+        if ($(this).val() == "") {
+            $(this).val("Phish");
+        }
+    });
+</script>
