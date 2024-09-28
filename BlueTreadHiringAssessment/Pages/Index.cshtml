@@ -12,14 +12,17 @@
 
 <div class="row" style="padding-top:14px;">
     <div class="col-sm-10">
-        <input type="text" name="SearchQuery" id="SearchQuery" placeholder="Search attractions..."/>
+        <input type="text" class="form-control" name="SearchQuery" id="SearchQuery" placeholder="Search attractions..."/>
     </div>
     <div class="col-sm-2">
-        <input type="button" class="submit-btn" value="Submit" id="SubmitSearch" onclick="SearchVenues();"/>
+        <input type="button" class="submit-btn form-control" value="Submit" id="SubmitSearch" onclick="SearchVenues();" />
     </div>
 </div>
 
 <div class="container" id="ResultList"></div>
+<div style="width:100%;display:none;margin:10px;" id="attImgContainer">
+    <img src="" id="attractionImg" style="width:100%;"/>
+</div>
 <div class="container" id="VenueData"></div>
 
 <script type="text/javascript">
@@ -43,24 +46,45 @@
                     $('input:hidden[name="__RequestVerificationToken"]').val());
             },
             success: function (data) {
+                $("#attImgContainer").hide();
                 $("#ResultList").html("");
                 $("#VenueData").html("");
                 $("#ResultList").html(data);
             }
         });
     }
-    function ShowEventDetails(eventId) {
+    function ShowEventDetails(attrId, attrName, ytlink, twlink, splink, homelink, imgUrl) {        
         $.ajax({
             type: "post",
             url: "/Index?handler=Details",
-            data: { EventId: eventId },
+            data: { AttrId: attrId },
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("XSRF-TOKEN",
                     $('input:hidden[name="__RequestVerificationToken"]').val());
             },
             success: function (data) {
+                $("#ResultList").html("");
                 $("#VenueData").html("");
                 $("#VenueData").html(data);
+                $("#AttractionName").html(attrName);
+                $("#AttYoutube").prop("href", ytlink);
+                if (ytlink == "#") {
+                    $("#AttYoutube").removeAttr("target")
+                }
+                $("#AttTwitter").prop("href", twlink);
+                if (twlink == "#") {
+                    $("#AttTwitter").removeAttr("target")
+                }
+                $("#AttSpotify").prop("href", splink);
+                if (splink == "#") {
+                    $("#AttSpotify").removeAttr("target")
+                }
+                $("#AttHomepage").prop("href", homelink);
+                if (homelink == "#") {
+                    $("#AttHomepage").removeAttr("target")
+                }
+                $("#attractionImg").prop("src", imgUrl);
+                $("#attImgContainer").show();
             }
         });
     }

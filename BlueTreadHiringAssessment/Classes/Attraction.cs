@@ -10,6 +10,8 @@ namespace BlueTreadHiringAssessment.Classes
         public string Id { get; set; }
         [JsonPropertyName("name")]
         public string Name { get;set; }
+
+        public Dictionary<string,string> AttrLinks { get; set; }
         [JsonPropertyName("images")]
         public List<Image> Images {  get; set; }
 

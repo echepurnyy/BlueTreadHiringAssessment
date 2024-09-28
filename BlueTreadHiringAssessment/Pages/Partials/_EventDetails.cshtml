@@ -1,0 +1,42 @@
+﻿@using BlueTreadHiringAssessment.Classes;
+@model IEnumerable<Event>;
+
+<div class="row">
+    <div class="col-sm-8 event-title fw-bold" id="AttractionName"></div>
+    <div class="col-sm-4 top-right" >
+        <a href="" id="AttTwitter" target="_blank"><img src="~/img/twitter.png" alt="X" /></a>
+        <a href="" id="AttYoutube" target="_blank"><img src="~/img/youtube.png" alt="YouTube" /></a>
+        <a href="" id="AttSpotify" target="_blank"><img src="~/img/spotify.png" alt="Spotify" /></a>
+        <a href="" id="AttHomepage" target="_blank"><img src="~/img/homepage.png" alt="Website" /></a>
+    </div>
+</div>
+@if (Model != null && Model.Any())
+{
+    foreach (var row in Model)
+    {
+        <div class="row event-row">
+            <div class="col-sm-2">
+                <img src="@row.Images[0].Url" class="venue-img" />
+            </div>
+            <div class="col-sm-10">
+                <div class="col-sm-12">
+                    @row.Date
+                </div>
+                <div class="col-sm-12 fw-bold">
+                    @row.Name
+                </div>
+                <div class="col-sm-12">
+                    @row.VenueName, @row.City, @row.State
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-12 no-results-container">
+            <img src="~/img/NoResults.png" class="no-results" />
+        </div>
+    </div>
+}
