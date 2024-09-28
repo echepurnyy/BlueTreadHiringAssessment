@@ -11,15 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
-            crossorigin="anonymous"></script>
+    <script src="~/lib/jquery-3.7.1.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 </head>
 <body>
     <header>
-        <a asp-area="" asp-page="/Index"><img class="logo-mini" src="~/img/EncoreTixLogoMini.png" /></a>
+        <a onclick="ClearPage();"><img class="logo-mini" src="~/img/EncoreTixLogoMini.png" /></a>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -32,5 +30,12 @@
     </footer>
 
     @await RenderSectionAsync("Scripts", required: false)
+    <script type="text/javascript">
+        function ClearPage() {
+            $("#ResultList").html("");
+            $("#VenueData").html("");
+            $("#SearchQuery").val("");
+        }
+    </script>
 </body>
 </html>
