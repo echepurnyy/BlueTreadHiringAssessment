@@ -24,6 +24,11 @@ body {
   background-color: #EDF5F9;
 }
 
+.searchbar {
+    background: #FFFFFF url(../img/mglass.png) no-repeat 7px 7px;
+    padding-left: 40px;
+}
+
 .loading {
     position: fixed;
     padding: 0;
@@ -38,9 +43,8 @@ body {
 }
 
 .load-img{
-    position: fixed;
+    position: relative;    
     top:33%;
-    left:33%;
     height:33%;
 }
 .logo-mini{
@@ -91,9 +95,12 @@ header {
     text-align: right;
     vertical-align: top;
 }
-.event-title{
-    font-size:24px;
-    padding-left:2%;
+.event-title {
+    font-size: 24px;
+    padding-left: 2%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .venue-img{
     height:90%;

@@ -5,10 +5,10 @@
     foreach(var row in Model)
     {
         <div class="row attraction-row" onclick="ShowEventDetails('@row.Id','@row.Name','@row.AttrLinks["youtube"]','@row.AttrLinks["twitter"]','@row.AttrLinks["spotify"]','@row.AttrLinks["homepage"]','@row.Images[0].Url');">
-            <div class="col-sm-1">
+            <div class="col-3">
                 <img src="@row.Images[0].Url" class="venue-img" />
             </div>
-            <div class="col-sm-11 center-left fw-bold">        
+            <div class="col-9 center-left fw-bold">        
                 @row.Name
             </div>
         </div>
@@ -17,7 +17,7 @@
 else
 {
     <div class="row">
-        <div class="col-sm-12 no-results-container">
+        <div class="col-12 no-results-container">
             <img src="~/img/NoResults.png" class="no-results"/>
         </div>
     </div>
